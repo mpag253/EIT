@@ -1,3 +1,5 @@
 *.gif
 *.fig
 *.png
+CEM_Bayesian/input/geom/*
+CEM_Bayesian/output/*
