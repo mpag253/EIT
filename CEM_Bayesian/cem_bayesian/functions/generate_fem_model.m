@@ -4,20 +4,20 @@ function [K,pK,SpK,i_K,M_B,C,D] = generate_fem_model(parameters)
 
 [params_m,params_e,params_p] = deal(parameters{:});
 [nodes,tris,nn,bdy_indx,bdy_elems] = deal(params_m{:});
-[n_elec,in_elec,n_per_elec,z_elec,N_] = deal(params_e{:});
+[n_elec,in_elec,n_per_elec,z_elec,N] = deal(params_e{:});
 [sigma] = deal(params_p{:});
 
 [K,pK,SpK,i_K] = get_fem_K(nodes,tris,sigma,nn);
 M_B = get_fem_MB(nn,n_elec,nodes,bdy_indx,in_elec,n_per_elec);
-C = get_fem_C(bdy_elems,nn,n_elec,bdy_indx,in_elec,nodes,z_elec,N_);
-D = get_fem_D(n_elec,bdy_indx,in_elec,nodes,N_,z_elec);
+C = get_fem_C(bdy_elems,nn,n_elec,bdy_indx,in_elec,nodes,z_elec,N);
+D = get_fem_D(n_elec,bdy_indx,in_elec,nodes,N,z_elec);
 
 end
 
 
 %% SUB-FUNCTIONS
 
-function [D] = get_fem_D(n_elec,bdy_indx,in_elec,nodes,N_,z_elec)
+function [D] = get_fem_D(n_elec,bdy_indx,in_elec,nodes,N,z_elec)
     % 
     el_lengths=zeros(n_elec,1);
     % 
@@ -30,10 +30,10 @@ function [D] = get_fem_D(n_elec,bdy_indx,in_elec,nodes,N_,z_elec)
         el_lengths(ii)=el_length;
     end
     % 
-    D=1/z_elec*N_'*diag(el_lengths)*N_;
+    D=1/z_elec*N'*diag(el_lengths)*N;
 end
 
-function [C] = get_fem_C(bdy_elems,nn,n_elec,bdy_indx,in_elec,nodes,z_elec,N_)
+function [C] = get_fem_C(bdy_elems,nn,n_elec,bdy_indx,in_elec,nodes,z_elec,N)
     % elec_nodes=unique(bdy_el);
     elec_nodes=bdy_elems(:,1);
     
@@ -60,7 +60,7 @@ function [C] = get_fem_C(bdy_elems,nn,n_elec,bdy_indx,in_elec,nodes,z_elec,N_)
     
         end
     end
-    C=-1/z_elec*Chat*N_;
+    C=-1/z_elec*Chat*N;
 end
 
 function [M_B] = get_fem_MB(nn,n_elec,nodes,bdy_indx,in_elec,n_per_elec)

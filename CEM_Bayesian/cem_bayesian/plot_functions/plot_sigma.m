@@ -1,6 +1,7 @@
-function [] = plot_sigma(plot_title,fg,sp,tris,x,y,sigma,clims)
+function [] = plot_sigma(pt,fg,sp,tris,x,y,sigma,clims)
     figure(fg)
     if sp, subplot(sp(1),sp(2),sp(3:end)), end
+    colormap(coolwarm)
     trisurf(tris,x,y,sigma)
     axis off
     daspect([1,1,1])
@@ -8,7 +9,8 @@ function [] = plot_sigma(plot_title,fg,sp,tris,x,y,sigma,clims)
     % xlim([-250 250]), ylim([-200 200])
     view(2)
     shading interp
-    set(gca,'fontsize',10)
-    title(plot_title,'interpreter','latex')
+    set(gca,'fontsize',14)
+    pt = ['\bf ', pt, ' \rm'];
+    title(pt,'interpreter','latex')
     drawnow
 end

@@ -9,7 +9,7 @@ function [tgeom,boundary_operator] = read_2D_tri_mesh(filename,shrink_factor,...
 % filename = './geom/ST4_A'
 % shrink_factor = 0.7;
 
-data = load([filename,'.mat']);
+data = load(filename);
 nodes = -data.tgeom.Points;         % negative to rotate mesh
 tris = data.tgeom.ConnectivityList;
 

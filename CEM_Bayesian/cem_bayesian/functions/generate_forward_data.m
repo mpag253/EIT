@@ -1,22 +1,20 @@
-function [data,sig_t_F,Le] = generate_forward_data(parameters)
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+function [data,sig_t_F,fwd_bdy,Le] = generate_forward_data(parameters,do_plots)
 
-addpath('distmesh','cem_bayesian')
+% addpath('distmesh','cem_bayesian')
 rng(123)            
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 [param_m,param_e,param_d] = deal(parameters{:});
-[fwd_shape] = deal(param_m{:});
-[n_elec,n_patt,z_elec,w_elec,N_,MeasPattern] = deal(param_e{:});
-[nl,sig_0] = deal(param_d{:});
+[mesh_file,seed_files] = deal(param_m{:});
+[n_elec,n_patt,z_elec,w_elec,N,MeasPattern] = deal(param_e{:});
+[nl,sig_0,conds] = deal(param_d{:});
 
 
 %%%%%%%%%%%%%%%%%%%%%%%% Geometry & Meshing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % [tgeom, full_bdy] = generate_mesh_fwd(fwd_shape);
-[tgeom,full_bdy] = read_2D_tri_mesh(fwd_shape,nan,false,false);
+[tgeom,full_bdy] = read_2D_tri_mesh(mesh_file,nan,false,false);
 nodes = tgeom.Points;
 tris = tgeom.ConnectivityList;  
 
@@ -34,9 +32,8 @@ fwd_params = {params_m,params_e};
 [x_bdy,y_bdy,~,~,bdy_indx,ss_b,bdy_elems] = deal(vars_bdy{:});  % bdy_indx
 [elec_pts, in_elec, n_per_elec] = deal(vars_elec{:});
 
-% %TMEP
-% plot_model('Forward model',123,0,tgeom,vars_bdy,vars_elec), hold on
-% stop
+% Boundary
+fwd_bdy = [x_bdy(ss_b),y_bdy(ss_b)];
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Ground truth %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -47,16 +44,24 @@ fwd_params = {params_m,params_e};
 %                             gaussian(obj_c{2},obj_w{2},obj_m{2},Nodes);
 
 %%%%%%%%%%% Defined from mesh seeds %%%%%%%%%%%
-xy_left = -readmatrix('/hpc/mpag253/EIT/CM_Bayesian/geom/pca_LRT_S_Mfull_N80_R-AGING001-EIsupine_LOO-A/truth_H5977/mesh_seeds/mesh_seeds_lung_left_0005.csv');
-xy_rght = -readmatrix('/hpc/mpag253/EIT/CM_Bayesian/geom/pca_LRT_S_Mfull_N80_R-AGING001-EIsupine_LOO-A/truth_H5977/mesh_seeds/mesh_seeds_lung_right_0005.csv');
-% xy_left = readmatrix('./geom/TEST_HLA-H11303_truth/meshseed_lung_left_0005.csv');
-% xy_rght = readmatrix('./geom/TEST_HLA-H11303_truth/meshseed_lung_right_0005.csv');
-lung_left = inpolygon(x,y,xy_left(:,1),xy_left(:,2));
-lung_rght = inpolygon(x,y,xy_rght(:,1),xy_rght(:,2));
-% lung_left(y>mean(y)) = 0;  % add diseased state to lung: LEFT,  POSTERIOR
-% lung_left(y<mean(y)) = 0;  % add diseased state to lung: LEFT, ANTERIOR
-lung_rght(y>mean(y)) = 0;  % add diseased state to lung: RIGHT, POSTERIOR
-% lung_rght(y<mean(y)) = 0;  % add diseased state to lung: RIGHT, ANTERIOR
+% Import lung shapes
+xy_left = -readmatrix(seed_files{1});
+xy_rght = -readmatrix(seed_files{2});
+% Find nodes in lung shapes
+poly_left = polyshape(xy_left(:,1),xy_left(:,2));
+poly_rght = polybuffer(polyshape(xy_rght(:,1),xy_rght(:,2)), 1.);
+xy_left_buff = polybuffer(poly_left, 0.1).Vertices;
+xy_rght_buff = polybuffer(poly_rght, 0.1).Vertices;
+lung_left = inpolygon(x,y,xy_left_buff(:,1),xy_left_buff(:,2));
+lung_rght = inpolygon(x,y,xy_rght_buff(:,1),xy_rght_buff(:,2));
+% Diseased states (conditions)
+if ~isempty(conds)
+    if any("LP"==conds), lung_left(y<mean(y)) = 0; end  % LEFT,  POSTERIOR
+    if any("LA"==conds), lung_left(y>mean(y)) = 0; end  % LEFT,  ANTERIOR
+    if any("RP"==conds), lung_rght(y<mean(y)) = 0; end  % RIGHT, POSTERIOR
+    if any("RA"==conds), lung_rght(y>mean(y)) = 0; end  % RIGHT, ANTERIOR
+end
+% Define truth
 sig_true = 0*ones(nn,1) + lung_left + lung_rght;
 sig_true(sig_true>1) = 1;
 sig_t_F = scatteredInterpolant(x,y,sig_true);  
@@ -73,14 +78,14 @@ sig_t_F = scatteredInterpolant(x,y,sig_true);
 
 % Generate FEM model parameters
 params_m = {nodes,tris,nn,bdy_indx,bdy_elems};
-params_e = {n_elec,in_elec,n_per_elec,z_elec,N_};
+params_e = {n_elec,in_elec,n_per_elec,z_elec,N};
 params_p = {sig_true};
 fem_params = {params_m,params_e,params_p};
 [K,pK,SpK,i_K,M_B,C,D] = generate_fem_model(fem_params); 
 
 % Solve
 B = K+1/z_elec*M_B;
-F = [zeros(nn,n_patt); N_'*MeasPattern];
+F = [zeros(nn,n_patt); N'*MeasPattern];
 A = [B,C;C',D];
 uu = A\F;
 
@@ -88,7 +93,7 @@ uu = A\F;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Simulated data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Meas_rest = sparse((1:n_elec-1),(nn+1:nn+n_elec-1),1);
-data_t = MeasPattern*N_*Meas_rest*uu;           % voltages at electrodes
+data_t = MeasPattern*N*Meas_rest*uu;           % voltages at electrodes
 size_data = size(data_t);                       % # electrode nodes
 
 
@@ -107,39 +112,21 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Plot %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Plot the forward model
-plot_model('Forward model',123,0,tgeom,vars_bdy,vars_elec), hold on
-plot([xy_left(:,1);xy_left(1,1)],[xy_left(:,2);xy_left(1,2)],'k')
-plot([xy_rght(:,1);xy_rght(1,1)],[xy_rght(:,2);xy_rght(1,2)],'k'), hold off
-
-% Plot the ground truth
-plot_sigma('Ground truth',103,[1,2,1],tris,x,y,sig_true,0)
-plot_sigma('Ground truth',104,[3,2,1],tris,x,y,sig_true,0)
-
+if any(101==do_plots)
+    plot_model('Forward model',101,0,tgeom,vars_bdy,vars_elec), hold on
+    % plot(x(lung_left),y(lung_left),'or')
+    % plot(x(lung_rght),y(lung_rght),'or')
+    plot([xy_left(:,1);xy_left(1,1)],[xy_left(:,2);xy_left(1,2)],'k')
+    plot([xy_rght(:,1);xy_rght(1,1)],[xy_rght(:,2);xy_rght(1,2)],'k')%, hold off
+    fill([xy_left(:,1);xy_left(1,1)],[xy_left(:,2);xy_left(1,2)],[.7,.7,.7])
+    fill([xy_rght(:,1);xy_rght(1,1)],[xy_rght(:,2);xy_rght(1,2)],[.7,.7,.7]), hold off
+    kids = get(gca,'children');
+    set(gca,'children',[kids(3:end);kids(1:2)])
 end
 
+% Plot the ground truth
+if any(103==do_plots), plot_sigma('Ground truth',103,[1,2,1],tris,x,y,sig_true,0), end
+if any(104==do_plots), plot_sigma('Ground truth',104,[3,2,1],tris,x,y,sig_true,0), end
+if any(105==do_plots), plot_sigma('Ground truth',105,[3,3,1],tris,x,y,sig_true,0), end
 
-% function [tgeom,full_bdy] = generate_mesh_fwd(fwd_shape)
-% 
-%     %trimesh_file = '/hpc/mpag253/EIT/CEM_Bayesian/geom/pca_LRT_S_Mfull_N80_R-AGING001-EIsupine_LOO-A/truth_H5977/trimesh/trimesh_0100_0050/trimesh';
-% %     trimesh_file = fwd_shape;
-% %     [tgeom,full_bdy] = read_2D_tri_mesh(trimesh_file,nan,false,false);
-% 
-% %     elseif strcmp(fwd_shape,'prediction_as_truth')
-% %         trimesh_file = './geom/TEST_population_sample_mean/trimesh_lung_0005';
-% %         [tgeom,full_bdy] = read_2D_tri_mesh(trimesh_file,0.1,false,false);
-% %         bspfile_mesh = "./geom/TEST_population_sample_mean/bspfile_torso.txt";
-% %         bspfile_subject = "./geom/TEST_HLA-H11303_predicted/bspfile_torso.txt";
-% %         [tgeom,~] = generate_subject_mesh(tgeom,full_bdy,bspfile_mesh,bspfile_subject); 
-%     
-% %     elseif strcmp(fwd_shape,'circle')
-% %         mesh_shape = @(p)dcircle(p,0,0,150);                                           
-% %         pfix = [];
-% %         figure(101)
-% %         [Nodes,~] = distmesh2d(mesh_shape,@huniform,h,[-1,-1;1,1],pfix); % plots
-% %         full_bdy = Nodes(:,1).^2+Nodes(:,2).^2>0.999;                   % boundary nodes
-% %         tgeom = delaunayTriangulation(Nodes);
-% 
-% %     else
-% %         error
-% %     end
-% end
+end

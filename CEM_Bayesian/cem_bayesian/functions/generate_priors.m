@@ -6,45 +6,51 @@ function [mu_sig,L_sig,G_sig] = generate_priors(prior_params,do_plot)
 [params_m,params_p,params_f] = deal(prior_params{:});
 [nn,Tris,x,y,theta] = deal(params_m{:});
 [prior_id,npriors,prior_corr_length] = deal(params_p{:});
-[path,pca_id,inv_mesh] = deal(params_f{:});
+[path,pca_id,inv_mesh_file] = deal(params_f{:});
 
 % Load probability information
-mu_sig_file = strcat(path,'geom/',pca_id,'/',inv_mesh,'/nodal_pf_mean_s-10000.csv');
-c_lung_file = strcat(path,'geom/',pca_id,'/',inv_mesh,'/nodal_pf_condcov_s-10000.csv');
-mu_sig_orig = readmatrix(mu_sig_file);
-c_lung_orig = readmatrix(c_lung_file);
+if ~strcmp(prior_id,'p0')
+    mu_sig_file = strrep(inv_mesh_file,'trimesh.mat','nodal_pf_mean_s-10000.csv');
+    c_lung_file = strrep(inv_mesh_file,'trimesh.mat','nodal_pf_condcov_s-10000.csv');
+    mu_sig_orig = readmatrix(mu_sig_file);
+    c_lung_orig = readmatrix(c_lung_file);
 
-% % Plot sample slice of the probability imformation
-% x_samples = linspace(min(x),max(x),1e3); y_samples = 0*x_samples;
-% F = scatteredInterpolant(x,y,mu_sig_orig); z1 = F(x_samples,y_samples);
-% F = scatteredInterpolant(x,y,mu_sig_orig+diag(c_lung_orig)); z2 = F(x_samples,y_samples);
-% F = scatteredInterpolant(x,y,mu_sig_orig-diag(c_lung_orig)); z3 = F(x_samples,y_samples);
-% figure(999), hold on
-% plot(x_samples,z1,'k-')
-% plot(x_samples,z2,'k--')
-% plot(x_samples,z3,'k--')
+%     % Plot sample slice of the probability imformation
+%     x_samples = linspace(min(x),max(x),1e3); y_samples = 0*x_samples;
+%     F = scatteredInterpolant(x,y,mu_sig_orig); z1 = F(x_samples,y_samples);
+%     F = scatteredInterpolant(x,y,mu_sig_orig+diag(c_lung_orig)); z2 = F(x_samples,y_samples);
+%     F = scatteredInterpolant(x,y,mu_sig_orig-diag(c_lung_orig)); z3 = F(x_samples,y_samples);
+%     figure(999), hold on
+%     plot(x_samples,z1,'k-')
+%     plot(x_samples,z2,'k--')
+%     plot(x_samples,z3,'k--')
+    
+    % For separate lung probabilities i.e. no covariance between lungs
+    mu_sig = mu_sig_orig;
+    c_lung = 4*c_lung_orig;  % 4* to set variance to 1.0
 
-% For separate lung probabilities i.e. no covariance between lungs
-mu_sig = mu_sig_orig;
-c_lung = c_lung_orig;
+    % % For combined lung probabilities: modify the variance/covariance to
+    % % include 0
+    % mu_sig = mu_sig_orig./2;
+    % c_lung = 0.5*(c_lung_orig + mu_sig*mu_sig');
+    % % issymmetric(c_lung)
+    % % min(eig(c_lung))
+    % % Plot sample slice of modified probability functions
+    % x_samples = linspace(min(x),max(x),1e3); y_samples = 0*x_samples;
+    % F = scatteredInterpolant(x,y,mu_sig); z1 = F(x_samples,y_samples);
+    % F = scatteredInterpolant(x,y,mu_sig+diag(c_lung).^.5); z2 = F(x_samples,y_samples);
+    % F = scatteredInterpolant(x,y,mu_sig-diag(c_lung).^.5); z3 = F(x_samples,y_samples);
+    % figure(998), hold on
+    % plot(x_samples,z1,'k-')
+    % plot(x_samples,z2,'k--')
+    % plot(x_samples,z3,'k--')
+    % hold off
+    % stop
 
-% % For combined lung probabilities: modify the variance/covariance to
-% % include 0
-% mu_sig = mu_sig_orig./2;
-% c_lung = 0.5*(c_lung_orig + mu_sig*mu_sig');
-% % issymmetric(c_lung)
-% % min(eig(c_lung))
-% % Plot sample slice of modified probability functions
-% x_samples = linspace(min(x),max(x),1e3); y_samples = 0*x_samples;
-% F = scatteredInterpolant(x,y,mu_sig); z1 = F(x_samples,y_samples);
-% F = scatteredInterpolant(x,y,mu_sig+diag(c_lung).^.5); z2 = F(x_samples,y_samples);
-% F = scatteredInterpolant(x,y,mu_sig-diag(c_lung).^.5); z3 = F(x_samples,y_samples);
-% figure(998), hold on
-% plot(x_samples,z1,'k-')
-% plot(x_samples,z2,'k--')
-% plot(x_samples,z3,'k--')
-% hold off
-% stop
+else
+    mu_sig = 0.5*ones(length(x),1);
+end
+
 
 % Gaussians for each node
 dnsq = (x-x').^2+(y-y').^2;
