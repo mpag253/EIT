@@ -1,5 +1,6 @@
 *.gif
 *.fig
 *.png
+*.csv
 CEM_Bayesian/input/geom/*
 CEM_Bayesian/output/*
