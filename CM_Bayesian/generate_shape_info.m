@@ -1,0 +1,121 @@
+function [p_lung] = generate_shape_info(x,y,Tris,nn,var_r)
+%generate_shape_info ...
+%   ...
+
+
+% Read in lungs
+[data_left,shift_left,~] = read_bspline_file('export_lung_left_param_test.txt');
+[data_rght,shift_rght,~] = read_bspline_file('export_lung_rght_param_test.txt');
+% rho for the theta of each boundary node
+theta_lung = linspace(0,2*pi,201)'; theta_lung = theta_lung(1:end-1);
+rtheta_left = evaluate_mesh_bspline(data_left(:,2), data_left(:,1), theta_lung);
+rtheta_rght = evaluate_mesh_bspline(data_rght(:,2), data_rght(:,1), theta_lung);
+[x_left,y_left] = pol2cart(theta_lung,rtheta_left);
+[x_rght,y_rght] = pol2cart(theta_lung,rtheta_rght);
+x_left = x_left + shift_left(1); y_left = y_left + shift_left(2);
+x_rght = x_rght + shift_rght(1); y_rght = y_rght + shift_rght(2);
+x_left = x_left + 165; y_left = y_left + 180;
+x_rght = x_rght + 165; y_rght = y_rght + 180;
+lung_left = inpolygon(x,y,x_left,y_left);
+lung_rght = inpolygon(x,y,x_rght,y_rght);
+lungs = or(lung_left,lung_rght);
+
+% (placeholder?) smooth probability function for lung shape
+sig = @(r,m,s) 1./(1 + exp(-s.*(r-m)));  % sigmoid function
+for n = 1:nn
+    x_left = (x(n)+shift_left(1)+165);
+    y_left = (y(n)+shift_left(2)+180);
+    x_rght = (x(n)+shift_rght(1)+165);
+    y_rght = (y(n)+shift_rght(2)+180);
+    % need radius from lung centre for each node
+    rn_left(n) = (x_left^2 + y_left^2)^.5;
+    rn_rght(n) = (x_rght^2 + y_rght^2)^.5;
+    % need theta relative to lung centre for each node
+    thetan_left = atan2(y_left, x_left);
+    thetan_rght = atan2(y_rght, x_rght);
+    % radius of lung (mean) at each node theta
+    rntheta_left(n) = evaluate_mesh_bspline(data_left(:,2), data_left(:,1)-pi, thetan_left);
+    rntheta_rght(n) = evaluate_mesh_bspline(data_rght(:,2), data_rght(:,1)-pi, thetan_rght);
+    % probability at the node
+    var_temp = 15;  % 15
+    p_lung_left(n) = 1 - sig(rn_left(n),rntheta_left(n),1/var_temp);
+    p_lung_rght(n) = 1 - sig(rn_rght(n),rntheta_rght(n),1/var_temp);
+end
+
+p_lung = p_lung_left + p_lung_rght;
+p_lung(p_lung>1) = 1;  % shouldn't need with real data
+
+
+% sampling data and fitting normal dist
+shape_data = NaN(nn,2);
+n_samp = 1e4;
+for n = 1:nn  % n = 200;
+    samp_left = normrnd(rn_left(n),sqrt(var_r(n)),n_samp,1);
+    samp_rght = normrnd(rn_rght(n),sqrt(var_r(n)),n_samp,1);
+    p_n_lung = NaN(n_samp,1);
+    for i = 1:n_samp
+        p_n_lung_left = 1 - sig(samp_left(i),rntheta_left(n),1/var_temp);
+        p_n_lung_rght = 1 - sig(samp_rght(i),rntheta_rght(n),1/var_temp);
+        p_n_lung(i) = p_n_lung_left + p_n_lung_rght;  
+    end
+    p_n_lung(p_n_lung>1) = 1;  % shouldn't need with real data
+    % using known mean (better):
+    pd2_mu = p_lung(n);
+    pd2_sigma = sqrt(1/n_samp*sum((p_n_lung-pd2_mu).^2));
+    shape_data(n,:) = [pd2_mu, pd2_sigma];
+    % fitting the mean:
+    % pd1 = fitdist(p_n_lung','Normal');
+    % [pd1.mu, pd1.sigma]
+    % p_lung(n)
+    % figure(990), plot(samp_left,p_n_lung_left,'x'), ylim([0 1])
+    % figure(990), plot(sort(p_n_lung),'x'), ylim([0 1])
+    % figure(990), histfit(p_n_lung)
+    % hold on, arr=0.6:0.001:0.85;
+    % plot(arr,10*normpdf(arr,pd2_mu,pd2_sigma),'g'), hold off
+    % figure(991), qqplot(p_n_lung,pd)
+end
+
+
+
+
+
+
+% figure(999);
+% % trisurf(Tris,x,y,rn_left)
+% % trisurf(Tris,x,y,p_lung)
+% trisurf(Tris,x,y,1e2*shape_data(:,1))
+% % hold on, plot3(shift_left(1)+165,shift_left(2)+180,1e3,'xr')
+% % hold on, plot3(shift_rght(1)+165,shift_rght(2)+180,1e3,'xr')
+% % hold on, plot3(x([1485,194,157,1077]),y([1485,194,157,1077]),1e2*ones(4,1),'xr')
+% % hold on, plot3(0,0,1e3,'+k')
+% % hold on, plot3(x(n),y(n),1.1,'xr')
+% view(2), shading interp, daspect([1,1,1]), %axis off, 
+
+% figure(998);
+% % trisurf(Tris,x,y,rn_left)
+% % trisurf(Tris,x,y,p_lung)
+% trisurf(Tris,x,y,1e3*shape_data(:,2))
+% % hold on, plot3(shift_left(1)+165,shift_left(2)+180,1e3,'xr')
+% % hold on, plot3(shift_rght(1)+165,shift_rght(2)+180,1e3,'xr')
+% % hold on, plot3(x([1485,194,157,1077]),y([1485,194,157,1077]),1e2*ones(4,1),'xr')
+% % hold on, plot3(0,0,1e3,'+k')
+% % hold on, plot3(x(n),y(n),1.1,'xr')
+% view(2), shading interp, daspect([1,1,1]), %axis off, 
+
+figure(997)
+xplot = linspace(min(x),max(x),100);
+F_mu = scatteredInterpolant(x,y,shape_data(:,1));
+F_sg = scatteredInterpolant(x,y,shape_data(:,2));
+slice_mu = F_mu(xplot,0*xplot);
+slice_sg = F_sg(xplot,0*xplot);
+plot(xplot,slice_mu,'k'), hold on
+plot(xplot,slice_mu+2.576*slice_sg,'k--')
+plot(xplot,slice_mu-2.576*slice_sg,'k--'), hold off
+title('Probability of lung (99% CI)')
+xlabel('x (mm)')
+ylabel('P')
+
+% stop
+
+end
+
