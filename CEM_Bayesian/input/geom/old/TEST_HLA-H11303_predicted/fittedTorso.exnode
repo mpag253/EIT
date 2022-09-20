@@ -1,0 +1,1009 @@
+ Group name: fitted
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           133
+     1.9199910007042973E+02   4.1226909152799671E+01  -9.4215545162065628E-01   0.0000000000000000E+00
+     7.9569867550453154E+01  -9.4196780557511506E+00  -2.0065382383447528E+01   0.0000000000000000E+00
+    -8.5903047782918961E+01   1.1224646302245445E-01  -6.1974873001701994E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           132
+     1.6426346978857552E+02   2.8548119960380426E+01  -2.4084628980287037E-01   0.0000000000000000E+00
+     8.4845530011394274E+01  -7.1027403885862617E-01  -2.1389176629549414E+01   0.0000000000000000E+00
+    -8.5061595511657089E+01  -8.3117776825191503E-01  -6.2471235594138314E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           131
+     1.3694415640184314E+02   3.5651026786112006E+01   3.5386935070479186E-01   0.0000000000000000E+00
+     7.7918225057032970E+01   9.2675529144353526E+00  -2.2761795969836172E+01   0.0000000000000000E+00
+    -8.3783693004243801E+01  -1.4523552923348659E+00  -6.2196678308343209E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           130
+     9.5622355507510221E+01   5.3011806004052879E+01  -2.7542702105684205E+00   0.0000000000000000E+00
+     7.5809121723641795E+01  -1.0525201230757272E+01  -2.0839675914174975E+01   0.0000000000000000E+00
+    -8.2530391714970420E+01   8.7345969501549348E-01  -6.2056247593504096E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           137
+     2.9691161544551352E+02  -6.3454714652139074E+01  -4.0864446455090198E+00   0.0000000000000000E+00
+     2.5433720308684747E+02   6.7596828972739786E+01  -5.4254195255906508E+00   0.0000000000000000E+00
+    -8.6407699681261903E+01  -4.2797053695877646E-01  -6.3558172951620548E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           136
+     3.1039591946498336E+02   2.3454433056408789E+01   6.2009801903106565E-02   0.0000000000000000E+00
+     1.7521944392562014E+02   8.0500408575043153E+01  -1.0712403556232306E+00   0.0000000000000000E+00
+    -8.8134349868723774E+01  -5.1629226320807042E-01  -6.3131324733167077E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           135
+     2.8291980846131435E+02   4.1141123512766157E+01   1.1096560398133221E+01   0.0000000000000000E+00
+     1.1532690419553184E+02   6.0186783893491409E+01  -1.0948731448663558E+01   0.0000000000000000E+00
+    -8.7228313035865185E+01  -2.0861022794742894E+00  -6.2936844188534621E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           134
+     2.3329217735276276E+02   5.7273484805179287E+01   3.9280296420777270E+00   0.0000000000000000E+00
+     8.0130271959628061E+01   1.1863023704850466E+01  -1.8849701989544137E+01   0.0000000000000000E+00
+    -8.7236294087206659E+01   3.4221965184078802E+00  -6.1723823673417265E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           139
+     1.8392302914919651E+02  -3.4862058162789666E+01   2.2733620184412420E-01   0.0000000000000000E+00
+     2.8058121387903901E+02  -7.0482136883493485E-01   2.3427180147181130E+00   0.0000000000000000E+00
+    -8.1313843584949950E+01   5.1987979795545314E-02  -6.2514784698613369E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           138
+     2.2526900975963849E+02  -5.1543627885775074E+01   1.2549899130065063E+00   0.0000000000000000E+00
+     2.7978788803616089E+02   7.5886425847016508E+00   1.1807434420388188E+00   0.0000000000000000E+00
+    -8.2693458924081654E+01   1.7612228849135447E-01  -6.2678201430182554E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           162
+     9.2178862954460286E+01   5.0145195442639263E+01  -1.3654327553049073E-02   0.0000000000000000E+00
+     7.1022446438480998E+01  -1.6367955906299013E+01  -3.0598761936904491E+00   0.0000000000000000E+00
+    -1.9662637511948031E+02   1.4987224225692891E-01  -6.2551913893912165E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           120
+     3.1032095986663040E+02   2.7081670819818207E+01   4.9684095573778091E+00   0.0000000000000000E+00
+     1.7399668230568005E+02   7.6799181859972663E+01   1.6225586581810332E+00   0.0000000000000000E+00
+    -3.0881873290829542E+01   7.7564505395646832E-01  -6.2131759677590544E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           121
+     2.9927876133144457E+02  -6.3179749036021917E+01   4.2777685165289068E+00   0.0000000000000000E+00
+     2.5545437762483280E+02   6.8229950333878378E+01   4.6645279526049315E+00   0.0000000000000000E+00
+    -2.8199343680373570E+01   4.7363083247422794E-01  -6.4983970969313830E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           122
+     2.2705921959319281E+02  -5.2128730281544840E+01   2.6429253304534686E+00   0.0000000000000000E+00
+     2.7689424472175534E+02   5.1165171307064483E+00   7.5676631459733423E+00   0.0000000000000000E+00
+    -2.6188899219380961E+01  -2.0680252433750099E-01  -6.1908537904895091E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           123
+     1.8581830397859744E+02  -3.5050787672780352E+01  -4.4309632018026845E-02   0.0000000000000000E+00
+     2.7446897975232167E+02  -5.7409041045212224E+00   1.2248399931112765E+01   0.0000000000000000E+00
+    -2.5103309663017097E+01  -2.0737986992350255E-01  -6.0664093882980495E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           124
+     1.5839889958056736E+02  -2.8835980905666570E+01   7.7596360625581839E-01   0.0000000000000000E+00
+     2.7006462161308792E+02   4.7557503054245687E-01   1.1597811502591416E+01   0.0000000000000000E+00
+    -2.4002541463187026E+01  -6.0704285817354231E-01  -6.1328109769246673E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           125
+     1.3071437906852219E+02  -3.9879086375622450E+01  -4.1151089574549848E-01   0.0000000000000000E+00
+     2.7263011227349898E+02   3.9797940298855838E+00   1.1418019529514524E+01   0.0000000000000000E+00
+    -2.3473617009183048E+01  -6.6931173364493043E-02  -6.0647500577341752E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           126
+     8.9413685037328705E+01  -9.5962217361728833E+01  -5.5474457290647647E+00   0.0000000000000000E+00
+     2.7133505559204747E+02  -7.7115123472718095E+00   9.2674370306784617E+00   0.0000000000000000E+00
+    -2.2008688937149561E+01   5.5333793981323043E-01  -6.1751850418447283E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           127
+     9.4704360485107113E+00  -2.6939874215142581E+01  -2.8395395509841848E+00   0.0000000000000000E+00
+     2.3947954300925281E+02  -6.2402946773745107E+01   5.0293068220815185E+00   0.0000000000000000E+00
+    -1.9746958707276637E+01   1.7364289553842260E+00  -6.2012232746588026E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           128
+     1.5753731918156536E+01   3.3276878356378930E+01  -6.6511780894479031E+00   0.0000000000000000E+00
+     1.6462452276360023E+02  -7.5866236118834294E+01   2.5413430150969520E+00   0.0000000000000000E+00
+    -2.0901267859943616E+01   4.3047447376218761E-01  -6.1044908068160495E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           129
+     4.4861135855973437E+01   4.4194819060170616E+01  -1.0944771475390196E+01   0.0000000000000000E+00
+     1.0444417995097248E+02  -5.7691781091735137E+01  -1.3167628233031358E+01   0.0000000000000000E+00
+    -7.9792577521426381E+01   4.2328266379256690E-01  -6.2818584964904531E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           201
+     2.6296190262800832E+02  -3.9743825617361558E+01  -5.4888352875280528E+00   0.0000000000000000E+00
+     2.3411852391582804E+02   5.2749763789742403E+01  -5.9434489852787342E+00   0.0000000000000000E+00
+    -3.0833313714348861E+02   0.0000000000000000E+00  -5.8037177755432310E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           199
+     2.6761736770613823E+02   3.7494216823812067E+01  -6.2433542242852642E+00   0.0000000000000000E+00
+     1.2149160771171712E+02   5.5899190924192673E+01   4.4363673896090665E+00   0.0000000000000000E+00
+    -3.1103494397117169E+02   0.0000000000000000E+00  -5.8432461610992682E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           198
+     2.2608843452331627E+02   5.1590715244989767E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     8.3560459075115801E+01   2.3537447142031688E+01   5.7196651177270752E+00   0.0000000000000000E+00
+    -3.1054496990664722E+02   0.0000000000000000E+00  -5.8592176833555619E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           200
+     2.8330023760370551E+02   9.2746868250325742E-02  -8.2892568463212459E+00   0.0000000000000000E+00
+     1.7898818125355450E+02   6.6809983376548658E+01   0.0000000000000000E+00   0.0000000000000000E+00
+    -3.1026747411291734E+02   0.0000000000000000E+00  -5.8169769319221373E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           195
+     1.3011789996618219E+02   3.7084559901933964E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     6.9804740736988208E+01  -5.9381842919321697E+00   2.0324364544702807E+00   0.0000000000000000E+00
+    -3.0779537244004513E+02   0.0000000000000000E+00  -5.7781245457122345E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           194
+     8.8396302459086357E+01   5.0681934168093491E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     8.0680079528045312E+01  -2.3539173227993221E+01   6.3008468698334541E+00   0.0000000000000000E+00
+    -3.0622976048482423E+02   0.0000000000000000E+00  -5.8271701701578607E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           197
+     1.8518322772551801E+02   3.6955643540345797E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     7.1066465439054426E+01   4.7770142225690977E+00   1.4580929999465837E+00   0.0000000000000000E+00
+    -3.0950586511357164E+02   0.0000000000000000E+00  -5.7685678160284354E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           196
+     1.5772179748239475E+02   2.7103679618893043E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     6.8620369763341770E+01   4.6484934371285730E-02  -7.9008141466407955E-01   0.0000000000000000E+00
+    -3.0867124543822842E+02   0.0000000000000000E+00  -5.7530340002347749E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           191
+     3.5877781326781708E+01  -4.0478263886307680E+01   9.7711174783111492E+00   0.0000000000000000E+00
+     2.2849079174112717E+02  -5.7745219222341568E+01  -5.8462433863525236E+00   0.0000000000000000E+00
+    -2.4775563579116439E+02   1.6155950758248200E-01  -6.0179594754653095E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           190
+     8.2549967242534194E+01  -5.4013224280638163E+01   1.7629553003578844E+00   0.0000000000000000E+00
+     2.6750173795945977E+02  -2.2330408810351894E+01  -8.8129208121267535E+00   0.0000000000000000E+00
+    -2.4830554290480063E+02  -1.2845420218874870E-01  -6.0336992794921088E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           193
+     4.5513397707325453E+01   3.8118263012085777E+01   6.0908039145311532E+00   0.0000000000000000E+00
+     1.1492952885072330E+02  -5.4859105326292770E+01   5.4030617003114800E+00   0.0000000000000000E+00
+    -3.0403534833236233E+02   0.0000000000000000E+00  -5.8224834998983994E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           192
+     1.9156713466467082E+01  -5.5530017063849291E-01   1.0059846834648583E+01   0.0000000000000000E+00
+     1.6959765637579852E+02  -7.1002348366735575E+01   1.5331267382022771E+00   0.0000000000000000E+00
+    -2.4859513505040343E+02  -4.6804617804108095E-01  -5.9929038555179517E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           115
+     1.3781808135755574E+02   3.3323606595112217E+01  -3.0069447955409834E-01   0.0000000000000000E+00
+     1.0820150078446540E+02   6.5417683340134856E+00  -4.2236087810255562E+01   0.0000000000000000E+00
+    -2.6732329574502057E+01  -2.0051130642509007E-01  -5.9322472387355006E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           114
+     9.6583848196532770E+01   4.8271735572578237E+01  -3.8176118258906206E+00   0.0000000000000000E+00
+     1.0438837164724529E+02  -5.5670807790023513E+00  -4.2962007325615886E+01   0.0000000000000000E+00
+    -2.5979272311438915E+01   1.7146920314345735E+00  -5.8880986077617472E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           117
+     1.9290292327094065E+02   3.9561039861501847E+01   6.2229390214509323E-02   0.0000000000000000E+00
+     1.0908846751232797E+02  -8.5551000983940728E+00  -4.4422240674746597E+01   0.0000000000000000E+00
+    -2.8968420506199941E+01  -9.0343909615140927E-01  -5.9307965415988505E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           116
+     1.6514727079592484E+02   2.8552879432141239E+01  -1.4572507114546909E-01   0.0000000000000000E+00
+     1.1402537540451657E+02  -2.0451007259336742E+00  -4.2437879859426438E+01   0.0000000000000000E+00
+    -2.7728731874525820E+01  -3.6132429247808273E-01  -5.9138595022446289E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           111
+     2.5736421729115754E+01  -3.4098034781725801E+01  -2.5153169300844496E+01   0.0000000000000000E+00
+     2.2672661935009944E+02  -5.8857316538095411E+01   1.3749916480718227E+01   0.0000000000000000E+00
+     3.2386143358326422E+01   0.0000000000000000E+00  -5.9196323144637965E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           110
+     9.1484749036293195E+01  -8.1511772682717094E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.5358401249388024E+02  -7.5275107892490336E+00   2.0964221935792533E+01   0.0000000000000000E+00
+     3.1000731864310616E+01   0.0000000000000000E+00  -5.9323320817313807E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           113
+     5.8447624711446679E+01   4.4693915050741523E+01  -1.0321673345735844E+01   0.0000000000000000E+00
+     1.1844289492525635E+02  -3.2014802988019603E+01  -2.1033366617014646E+01   0.0000000000000000E+00
+    -2.3989789629412879E+01  -1.4988300517906312E+00  -5.9662802451302319E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           112
+     2.7510433280869648E+01   3.0237668839784845E+01  -1.2465339969394570E+01   0.0000000000000000E+00
+     1.6383368863099528E+02  -6.0990085531063954E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     3.1198019834344599E+01   0.0000000000000000E+00  -5.6326664669453542E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           205
+     1.2206082264421327E+02  -3.7481911763911498E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.7191044505509569E+02  -1.0806744035869575E+00  -6.5329450541530791E+00   0.0000000000000000E+00
+    -3.0291373248016765E+02   0.0000000000000000E+00  -5.7574020458256413E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           119
+     2.7214021273233334E+02   4.8219826996080194E+01   1.0241704915216760E+01   0.0000000000000000E+00
+     1.2657286375405285E+02   3.7700798246936827E+01  -1.7743012616080392E+01   0.0000000000000000E+00
+    -3.0662610838233395E+01   1.6332728208281500E-01  -5.9604983720666958E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           118
+     2.3428109543490808E+02   4.3558052827327352E+01   4.6242719600817006E+00   0.0000000000000000E+00
+     1.0719393042784129E+02   6.7749543623595878E+00  -4.2786869174398717E+01   0.0000000000000000E+00
+    -3.0663320409655118E+01   1.3856090799696741E+00  -5.9244858785016575E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           204
+     1.4959601774324551E+02  -2.6910297210869512E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.7171265330852589E+02   2.6692426033957872E-01  -4.2865781308194206E+00   0.0000000000000000E+00
+    -3.0377885257647847E+02   0.0000000000000000E+00  -5.7845653394537962E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           207
+     4.1960885752444248E+01  -3.6482577755599365E+01   6.9185235429759642E+00   0.0000000000000000E+00
+     2.2487389846814025E+02  -5.1281263282099559E+01  -5.5417665009511676E+00   0.0000000000000000E+00
+    -3.0139703291814061E+02   0.0000000000000000E+00  -5.8211871385521114E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           206
+     8.1101379500068944E+01  -4.9431470482928631E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.6058598962993324E+02  -2.3613610603946679E+01  -8.3089988323440345E+00   0.0000000000000000E+00
+    -3.0179179202679956E+02   0.0000000000000000E+00  -5.8084176342553562E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           108
+     1.6049348152924986E+02  -2.8397147639168832E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.5304019124075171E+02   1.1028462610788115E-01   2.0153227198079847E+01   0.0000000000000000E+00
+     2.8718836945119552E+01   0.0000000000000000E+00  -5.8414100176995717E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           109
+     1.3283737565651987E+02  -3.1204769948989380E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.5467469003551301E+02   4.3454050130191284E+00   2.0886608504603849E+01   0.0000000000000000E+00
+     2.9648769136084141E+01   0.0000000000000000E+00  -5.9818643053265163E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           102
+     2.3490037152004993E+02   3.7626905343757528E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     1.4417288949853739E+02  -5.6651652268085853E+00  -3.9985426379288498E+01   0.0000000000000000E+00
+     2.3879533305558851E+01   0.0000000000000000E+00  -6.2436312202437406E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           103
+     2.6553162882504330E+02   4.5368619091467480E+01   9.8909347012108828E+00   0.0000000000000000E+00
+     1.4434321373233519E+02   1.0052322301526415E+01  -1.9854304588017150E+01   0.0000000000000000E+00
+     2.3091284490877232E+01   0.0000000000000000E+00  -5.9641249198502940E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           100
+     1.6589455397362292E+02   2.8157113795435318E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     1.4455388030066428E+02  -4.2750618450458311E-01  -3.2817834429964485E+01   0.0000000000000000E+00
+     2.6025056560472365E+01   0.0000000000000000E+00  -5.8701160322729343E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           101
+     1.9347696446134421E+02   3.9612222177295578E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     1.4608426140800947E+02   5.1773929495918369E-01  -4.0085840211609998E+01   0.0000000000000000E+00
+     2.5241828850974024E+01   0.0000000000000000E+00  -6.1604454192413726E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           106
+     2.2912827819599889E+02  -5.5185595716418469E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.6011427651033563E+02   6.0777969610729725E+00   2.0383850638583723E+01   0.0000000000000000E+00
+     2.6649296516165752E+01   0.0000000000000000E+00  -5.7935532068082175E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           107
+     1.8794476440992213E+02  -3.6014230571458000E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.5621763288231790E+02  -6.1399684506203132E+00   2.0098638339471503E+01   0.0000000000000000E+00
+     2.7912336078726760E+01   0.0000000000000000E+00  -5.9147966388124097E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           104
+     3.0248662998643186E+02   2.4701956116378334E+01   1.4829715770375108E+01   0.0000000000000000E+00
+     1.7263480036070379E+02   6.3890887703516867E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.2695890996741927E+01   0.0000000000000000E+00  -5.6257474141501689E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           105
+     2.8821974499251820E+02  -5.5703852985114885E+01   1.3287375914836703E+01   0.0000000000000000E+00
+     2.3966938566961281E+02   5.8869131158806397E+01   2.0782563126916955E+01   0.0000000000000000E+00
+     2.4512018138557405E+01   0.0000000000000000E+00  -5.5541699672243375E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           179
+     1.3186382137119421E+02   3.6149728650024031E+01   5.9969182452728542E-01   0.0000000000000000E+00
+     6.7286686276179978E+01  -1.0735346211022518E+00   7.6598360848364577E-01   0.0000000000000000E+00
+    -2.5458514216232223E+02  -3.8298101909504667E-02  -6.0271040180968818E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           178
+     9.0332414669785450E+01   5.2646356870823922E+01   1.6255014616733685E+00   0.0000000000000000E+00
+     7.2720238234446512E+01  -2.0018376165463561E+01   7.7592505902446929E+00   0.0000000000000000E+00
+    -2.5287712969871208E+02  -7.1891399923963969E-02  -6.0399256479234154E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           177
+     4.1676463368036046E+01   4.3391357770081122E+01   5.1512750622728563E+00   0.0000000000000000E+00
+     1.0886052381544616E+02  -5.8192063057765751E+01   5.2872139097498021E+00   0.0000000000000000E+00
+    -2.5055690782462997E+02   2.9152716480949781E-01  -6.0278816231172001E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           176
+     1.3397088733931822E+01   4.5193758940830948E+00   8.6765399687701823E+00   0.0000000000000000E+00
+     1.6818548492271805E+02  -7.4841978849304226E+01  -1.6854761546317762E+00   0.0000000000000000E+00
+    -1.9210612953567923E+02  -3.4643294401676983E-01  -6.2984325621051617E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           175
+     2.8303357284435538E+01  -4.3444059822432187E+01   1.0962612322498400E+01   0.0000000000000000E+00
+     2.3160604609594441E+02  -6.2593433387369842E+01  -4.7616719002638126E+00   0.0000000000000000E+00
+    -1.9112022769322687E+02   3.6856618841784886E-02  -6.3049876030106695E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           174
+     8.4154132854415693E+01  -6.2624687492800319E+01   3.6474152479231385E+00   0.0000000000000000E+00
+     2.7285867286902766E+02  -1.8191804217120580E+01  -4.6049731534954716E+00   0.0000000000000000E+00
+    -1.9187132427730765E+02  -7.2224754450601902E-01  -6.2519019234227855E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           173
+     1.2525285608477496E+02  -4.3572867361291209E+01  -2.7230827260483009E-02   0.0000000000000000E+00
+     2.8059686170880406E+02  -2.0796190301485442E+00  -3.4528609733068114E+00   0.0000000000000000E+00
+    -1.9291631588977921E+02  -1.8494898443436833E-01  -6.2972152311123168E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           172
+     1.5287932847589488E+02  -2.9682932623711647E+01  -6.3149810303240006E-01   0.0000000000000000E+00
+     2.7947958054459718E+02   1.1492742374710812E+00  -6.8179032947663023E+00   0.0000000000000000E+00
+    -1.9382401491665689E+02   2.3193256804185960E-01  -6.2709903918825610E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           171
+     1.8033604894875876E+02  -3.4425565685665099E+01  -1.7074970932751379E-01   0.0000000000000000E+00
+     2.8207359169511631E+02  -4.0857280310136662E-01  -4.9172929381617134E+00   0.0000000000000000E+00
+    -1.9472136238564127E+02   3.9030208065978506E-01  -6.3059100717231111E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           170
+     2.2180900761629687E+02  -5.0879644763041561E+01  -7.6601381276643266E-01   0.0000000000000000E+00
+     2.7777306708895065E+02   1.4591330365909275E+01  -4.7362323932035535E+00   0.0000000000000000E+00
+    -1.9635727078069249E+02  -1.3849530433687043E-01  -6.2902214965602795E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           203
+     1.7712855525975587E+02  -3.7393409380874090E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.7361835636099414E+02   4.8727131617036118E-01  -6.0913322118258950E+00   0.0000000000000000E+00
+    -3.0467117005436438E+02   0.0000000000000000E+00  -5.7505536638480883E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           182
+     2.2805876358062017E+02   5.6328171909700416E+01  -1.8502383566480287E+00   0.0000000000000000E+00
+     7.6430080269687792E+01   1.9598712248572451E+01   6.3098903187532382E+00   0.0000000000000000E+00
+    -2.5711795567365618E+02  -2.4988759190988641E-03  -6.0190364745483762E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           183
+     2.7557189241742486E+02   4.0067486295355089E+01  -5.8507434728666556E+00   0.0000000000000000E+00
+     1.1756445073320911E+02   6.1136367601601897E+01   2.4805907840779864E+00   0.0000000000000000E+00
+    -2.5779045238696307E+02  -5.2444362025504274E-02  -6.0549695632971599E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           180
+     1.5939068119956414E+02   2.7677745123797440E+01   9.3667892987740564E-01   0.0000000000000000E+00
+     6.8609351694366453E+01   6.2710748408269568E-01  -2.9297792374220841E+00   0.0000000000000000E+00
+    -2.5537698339702291E+02  -2.8017839029906177E-01  -6.0353156171573325E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           181
+     1.8693993478160391E+02   3.9203634523044308E+01  -4.8140387680278846E-01   0.0000000000000000E+00
+     6.9130049790299211E+01  -1.8304748222276748E-01  -3.0185261837766816E-02   0.0000000000000000E+00
+    -2.5639531128004080E+02   4.3156803822793810E-01  -5.9888387167491288E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           186
+     2.2017466647002911E+02  -5.2586310828486297E+01  -9.2148778785686369E-01   0.0000000000000000E+00
+     2.7316541386798463E+02   1.9511286514921935E+01  -8.2749967999137120E+00   0.0000000000000000E+00
+    -2.5285755404180921E+02  -4.2222814441189921E-01  -6.0023253605876832E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           187
+     1.7867513775295751E+02  -3.6481604062293357E+01  -8.6655451830255137E-01   0.0000000000000000E+00
+     2.7802310526027907E+02  -1.6394952940957839E+00  -4.8750279880631675E+00   0.0000000000000000E+00
+    -2.5144528357292612E+02   4.1632686497223736E-01  -5.9947385124953342E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           184
+     2.9232846106263486E+02  -7.5859767754420993E-02  -7.4615966671520289E+00   0.0000000000000000E+00
+     1.7821714536956679E+02   7.2373247157861741E+01  -1.1875449784078476E+00   0.0000000000000000E+00
+    -2.5714047335915893E+02  -4.8329715481646007E-01  -5.9926491596358765E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           185
+     2.6975687813892722E+02  -4.3522911868452681E+01  -5.6743328020046491E+00   0.0000000000000000E+00
+     2.3910651853592432E+02   5.6697504620302446E+01  -8.2878412568510775E+00   0.0000000000000000E+00
+    -2.5521469102006864E+02   8.5186162860315578E-02  -6.0068170614401872E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           188
+     1.5121819629079991E+02  -2.7635026776560657E+01  -1.0686973248860308E+00   0.0000000000000000E+00
+     2.7439931784614890E+02   1.0123550870431595E+00  -4.2657325976334199E+00   0.0000000000000000E+00
+    -2.5043158133988041E+02  -4.3377572660593527E-02  -6.0564058735075342E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           189
+     1.2356734886306350E+02  -3.8891558781807205E+01   1.8627383744950823E-01   0.0000000000000000E+00
+     2.7676127650477900E+02   1.3364705839645603E+00  -5.4911478415644899E+00   0.0000000000000000E+00
+    -2.4962629805637039E+02   2.1978586409870049E-02  -6.0131443523633799E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           202
+     2.1873265135500523E+02  -5.1136987617138367E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     2.6653481538351480E+02   2.1339699352466617E+01  -8.0365790623490696E+00   0.0000000000000000E+00
+    -3.0618900505036947E+02   0.0000000000000000E+00  -5.7846792702489999E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           99
+     1.3842561479964280E+02   3.4787683503511232E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     1.4294377575813559E+02  -2.0405339693658087E-01  -3.7591510697616897E+01   0.0000000000000000E+00
+     2.6970497627396288E+01   0.0000000000000000E+00  -5.9152874949466842E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           98
+     9.7228801687220482E+01   4.4102929868010008E+01   0.0000000000000000E+00   0.0000000000000000E+00
+     1.4005818924097437E+02   3.7143484971393135E+00  -3.7066040604211295E+01   0.0000000000000000E+00
+     2.8250663857494640E+01   0.0000000000000000E+00  -6.1314015659551210E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           168
+     2.9985991337032488E+02   2.1815824051713881E+00  -7.9923977170198830E+00   0.0000000000000000E+00
+     1.7729708510643104E+02   7.6100360806359134E+01   1.2016575038896991E+00   0.0000000000000000E+00
+    -2.0115079766150720E+02  -8.6758057951720291E-01  -6.2567609713330334E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           169
+     2.7664283770182766E+02  -4.8018674235672918E+01  -6.2806279530804678E+00   0.0000000000000000E+00
+     2.4350877697701316E+02   6.1663437717976656E+01  -4.2398936598651478E+00   0.0000000000000000E+00
+    -1.9915979880000648E+02   9.3475466780842717E-02  -6.2578416543059170E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           164
+     1.6109890255918819E+02   2.9885356617047805E+01   1.4507282028397916E-01   0.0000000000000000E+00
+     7.0538416881896438E+01   9.1558564253449837E-01  -5.1175347167861824E+00   0.0000000000000000E+00
+    -1.9888185685549715E+02  -1.5893646277838119E-01  -6.2785772362712592E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           165
+     1.8868552810011596E+02   4.3756897079158051E+01  -7.1899917753246056E-01   0.0000000000000000E+00
+     7.0116451394721466E+01  -1.9928301310563348E+00  -3.4924305331461984E+00   0.0000000000000000E+00
+    -1.9975194147636680E+02  -5.0065999716617737E-02  -6.2816467037851531E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           166
+     2.2983243709504995E+02   5.6153047314642485E+01   8.9479897146797105E-01   0.0000000000000000E+00
+     7.5534414201947740E+01   1.6917778006326063E+01  -4.2059510841805645E+00   0.0000000000000000E+00
+    -2.0100811912308131E+02   7.4478233208965794E-01  -6.2479371014561103E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           167
+     2.8017736167000885E+02   4.3597057058310881E+01  -1.1046956798088028E+00   0.0000000000000000E+00
+     1.1678542535132706E+02   6.0824425932407280E+01  -4.8124645786876558E-01   0.0000000000000000E+00
+    -2.0170446913644511E+02  -2.2297691668383959E-01  -6.2748258007327571E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           160
+     8.8134626087620109E+00   1.4286219249549921E+01   3.3305469476538958E+00   0.0000000000000000E+00
+     1.6684301318904994E+02  -8.0267674111818252E+01  -8.1995113083657856E-01   0.0000000000000000E+00
+    -1.3486129462040435E+02   1.6176754809561489E-01  -6.2992731153279969E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           161
+     4.0919226162085138E+01   4.8015719875318929E+01   1.0056024412941875E+00   0.0000000000000000E+00
+     1.0622833014590900E+02  -5.8675366807333411E+01  -2.3460418971501359E-02   0.0000000000000000E+00
+    -1.9430814404022803E+02   2.8069915592766570E-01  -6.2844128996661247E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           97
+     6.5989392260936995E+01   4.0982731897859082E+01  -7.0824324174516278E+00   0.0000000000000000E+00
+     1.3800551497710535E+02  -8.6213821017030625E+00  -2.0632888519027656E+01   0.0000000000000000E+00
+     2.9341446629884921E+01   0.0000000000000000E+00  -5.9144164011939125E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           163
+     1.3363254442491453E+02   3.4188991685156026E+01   6.0242501007854976E-01   0.0000000000000000E+00
+     6.7840755392886805E+01   8.1219467881945107E-01  -4.2829465213372622E+00   0.0000000000000000E+00
+    -1.9798507450544560E+02  -1.2741808134890625E-01  -6.2809162371429039E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           151
+     2.8455508942643922E+02   4.4464358000948096E+01  -1.4675551744580067E+00   0.0000000000000000E+00
+     1.1354215931671000E+02   6.0146543355951827E+01   2.5824795380973695E+00   0.0000000000000000E+00
+    -1.4476592588360859E+02  -6.1031400667217472E-01  -6.3217936406135578E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           150
+     2.3161893514175452E+02   5.9778975406464419E+01  -2.3549948500668285E+00   0.0000000000000000E+00
+     7.4643479550150118E+01   1.4359194149066530E+01   1.2961731038204447E+00   0.0000000000000000E+00
+    -1.4412898705651972E+02   9.6019932230973437E-01  -6.2865106898691778E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           153
+     2.8709327828231312E+02  -5.7011905274130257E+01  -1.2157845148271868E+01   0.0000000000000000E+00
+     2.4831381305138277E+02   6.6474997423673003E+01  -8.6736350116224941E+00   0.0000000000000000E+00
+    -1.4291774156973199E+02   3.6536551595684287E-02  -6.1617319087199157E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           152
+     3.0721060666681763E+02   1.0276348489380000E+01  -3.3192658588150752E+00   0.0000000000000000E+00
+     1.7631688739319102E+02   7.9370721840048262E+01  -3.4432741626990054E-01   0.0000000000000000E+00
+    -1.4476886787909066E+02  -6.1568121672416098E-01  -6.2288393565088242E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           155
+     1.8211045120206867E+02  -3.5001880358983094E+01   5.5583141320012339E-02   0.0000000000000000E+00
+     2.8272309870923817E+02   9.5529071479115568E-01  -1.2522753024914970E-01   0.0000000000000000E+00
+    -1.3792939347789863E+02   1.7205831077767184E-01  -6.2848521940214070E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           154
+     2.2352881411999377E+02  -5.1672108537985672E+01  -6.7949060897900426E-01   0.0000000000000000E+00
+     2.7969121589812926E+02   9.8164439008911124E+00  -3.6751219129773784E+00   0.0000000000000000E+00
+    -1.3942936710531222E+02   2.9794368492508433E-01  -6.2830540757022561E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           157
+     1.2703314880228264E+02  -4.3077652537199697E+01  -8.5350350754783633E-01   0.0000000000000000E+00
+     2.8079023773373490E+02  -1.8647747989663084E+00  -1.6370727351614711E-02   0.0000000000000000E+00
+    -1.3615605420579314E+02  -1.3563664554620300E-01  -6.2648961526132169E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           156
+     1.5459873957495253E+02  -2.9836740242397788E+01   2.3135012118869436E-01   0.0000000000000000E+00
+     2.8120555576154783E+02   4.0117194934997213E-01   3.2454247800629665E-01   0.0000000000000000E+00
+    -1.3701984011288431E+02   1.2024981802621589E-01  -6.2654233056796642E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           159
+     1.7781872988264499E+01  -4.3090487019446613E+01   1.6919902360099993E+01   0.0000000000000000E+00
+     2.3573207047094209E+02  -6.2725045376108206E+01  -6.4325597165904496E+00   0.0000000000000000E+00
+    -1.3367543043427224E+02   1.3234372578969311E-01  -6.2636656611044913E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           158
+     8.5866802351961979E+01  -7.7591728171554848E+01   3.7945933063892174E+00   0.0000000000000000E+00
+     2.7498959493953078E+02  -1.4680854702888039E+01  -2.0534027843720382E+00   0.0000000000000000E+00
+    -1.3508922789266467E+02  -2.5021499465015884E-01  -6.2450687329188838E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           146
+     9.3972779371938643E+01   5.1000974582120726E+01   8.2708755956255187E-01   0.0000000000000000E+00
+     6.9479729674713525E+01  -1.1928316117572445E+01   1.1437761324644129E+00   0.0000000000000000E+00
+    -1.3973065412933775E+02   3.4655247379017073E-01  -6.3497567764496623E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           147
+     1.3538099026144843E+02   3.4389650251329414E+01  -8.1975930875668002E-01   0.0000000000000000E+00
+     6.8708740195333121E+01   4.4412049090997474E+00  -3.4490745002496888E+00   0.0000000000000000E+00
+    -1.4105691349672637E+02  -1.6212431391794507E-01  -6.3358575108435808E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           144
+     9.8342743624278643E+00   2.7653619167491243E+01  -2.9914006870905689E+00   0.0000000000000000E+00
+     1.6567750305684558E+02  -8.1058053889106944E+01  -9.6661251569420481E-01   0.0000000000000000E+00
+    -7.7663696515340860E+01   1.7584022155354651E-01  -6.3151302412514681E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           145
+     3.9902439954393451E+01   4.9564490019726527E+01   2.4320909364495602E+00   0.0000000000000000E+00
+     1.0213047863508676E+02  -6.0741586005748665E+01   4.4864048223070636E+00   0.0000000000000000E+00
+    -1.3720005493808208E+02  -1.9031604393869231E-01  -6.3412934739017842E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           142
+     8.7625359036694107E+01  -9.1741230353223600E+01   9.4879462230401246E-01   0.0000000000000000E+00
+     2.7457908032321552E+02  -1.1618630702120999E+01   6.6661687324540253E-01   0.0000000000000000E+00
+    -7.8472712676344273E+01   3.2893068635211337E-01  -6.2439892827418952E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           143
+     9.0262027826379878E+00  -3.2917944041942889E+01   7.7415859104729314E+00   0.0000000000000000E+00
+     2.3980820016347155E+02  -6.2297969605423383E+01  -3.8660348885311233E+00   0.0000000000000000E+00
+    -7.6577389253332697E+01   5.9672069075161494E-01  -6.2636670293646119E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           140
+     1.5645687707970811E+02  -2.9914553161247255E+01   4.7946168413460194E-01   0.0000000000000000E+00
+     2.7797442740903705E+02  -5.0463349849664177E-02   5.9017697894639420E+00   0.0000000000000000E+00
+    -8.0504042309650004E+01  -2.3877357682208336E-01  -6.2160334361237062E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           141
+     1.2883686724813555E+02  -4.3935755865045913E+01  -6.2639858194942599E-01   0.0000000000000000E+00
+     2.7864587963348066E+02  -4.8198607924240477E-01   2.6761773414747192E+00   0.0000000000000000E+00
+    -7.9602038997143666E+01  -1.8097208684136881E-01  -6.2219588536605151E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           208
+     2.6197787096714652E+01  -3.7397035475489926E-01   9.6067593796951041E+00   0.0000000000000000E+00
+     1.7099457386869352E+02  -6.5300000968443300E+01   0.0000000000000000E+00   0.0000000000000000E+00
+    -3.0219398540655101E+02   0.0000000000000000E+00  -5.8185331613296448E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           148
+     1.6279850107445631E+02   2.9615672570845597E+01  -6.4617864499904754E-02   0.0000000000000000E+00
+     7.3867291937509606E+01   8.8752017790222693E-01  -6.9159246443544156E+00   0.0000000000000000E+00
+    -1.4188375800791431E+02  -4.9886672534172266E-01  -6.2964269529680763E+01   0.0000000000000000E+00
+ #Fields=1
+ 1) coordinates, coordinate, rectangular cartesian, #Components=3
+   x.  Value index= 1, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   y.  Value index= 5, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+   z.  Value index= 9, #Derivatives= 3 (d/ds1,d/ds2,d2/ds1ds2)
+ Node:           149
+     1.9042202579638007E+02   4.3275824099624678E+01   9.5294205813460675E-01   0.0000000000000000E+00
+     7.1483926807158895E+01  -4.0221292585890609E+00  -2.3740641379270504E+00   0.0000000000000000E+00
+    -1.4280114605070031E+02   2.9266231591322339E-02  -6.2893805465757055E+01   0.0000000000000000E+00
