@@ -53,12 +53,14 @@ function [ax] = plot_section(pt,fg,sp,x,y,y_s,sig_t,sig_new,S_post,sig_samps)
 
     % Format plot
     xlim([min(x_s) max(x_s)])
-    xlabel('x [mm]')
-    ylabel('${\sigma}$')
+    xlabel('x (mm)')
+%     ylabel('${\sigma}$')
+    ylabel('\gamma')
     ytickformat('%.1f')
-    pt = ['\bf ', pt, ' \rm'];
-    title(pt,'interpreter','latex')
-    plots=get(gca, 'Children');
+%     pt = ['\bf ', pt, ' \rm'];
+%     title(pt,'interpreter','latex')
+    title(pt,'FontWeight','bold')
+%     plots=get(gca, 'Children');
 %     legend([plots(2) plots(1) plots(6) plots(5)], ...
 %            {'True','MAP','${99\%}$ CI','Samples'}, ...
 %            'Location','SouthOutside', ...

@@ -1,4 +1,4 @@
-function [data,sig_t_F,fwd_bdy,Le] = generate_forward_data(parameters,do_plots)
+function [data,gamma_t_F,fwd_bdy,Le] = generate_forward_data(parameters,do_plots)
 
 % addpath('distmesh','cem_bayesian')
 rng(123)            
@@ -8,7 +8,7 @@ rng(123)
 [param_m,param_e,param_d] = deal(parameters{:});
 [mesh_file,seed_files] = deal(param_m{:});
 [n_elec,n_patt,z_elec,w_elec,N,MeasPattern] = deal(param_e{:});
-[nl,sig_0,conds] = deal(param_d{:});
+[nl,sig_0,conds,g_t_factor] = deal(param_d{:});
 
 
 %%%%%%%%%%%%%%%%%%%%%%%% Geometry & Meshing %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -28,9 +28,19 @@ fwd_params = {params_m,params_e};
 
 % Unpack all forward model variables
 [vars_all,vars_bdy,vars_elec] = deal(model_vars{:});
-[x,y,~,nn] = deal(vars_all{:});
-[x_bdy,y_bdy,~,~,bdy_indx,ss_b,bdy_elems] = deal(vars_bdy{:});  % bdy_indx
+[x,y,theta,nn] = deal(vars_all{:});
+[x_bdy,y_bdy,theta_bdy,~,bdy_indx,ss_b,bdy_elems] = deal(vars_bdy{:});  % bdy_indx
 [elec_pts, in_elec, n_per_elec] = deal(vars_elec{:});
+
+% % in_elec
+% % n_per_elec
+% for i = 1:16
+%     i
+%     [~,sort_indices] = sort(theta_bdy(in_elec(:,i)));
+%     [sort_indices, theta_bdy(in_elec(:,i))]
+% end
+
+
 
 % Boundary
 fwd_bdy = [x_bdy(ss_b),y_bdy(ss_b)];
@@ -45,15 +55,21 @@ fwd_bdy = [x_bdy(ss_b),y_bdy(ss_b)];
 
 %%%%%%%%%%% Defined from mesh seeds %%%%%%%%%%%
 % Import lung shapes
-xy_left = -readmatrix(seed_files{1});
-xy_rght = -readmatrix(seed_files{2});
+xy_left = readmatrix(seed_files{1});
+xy_rght = readmatrix(seed_files{2});
+xy_left(:,2) = -xy_left(:,2);
+xy_rght(:,2) = -xy_rght(:,2);
 % Find nodes in lung shapes
 poly_left = polyshape(xy_left(:,1),xy_left(:,2));
-poly_rght = polybuffer(polyshape(xy_rght(:,1),xy_rght(:,2)), 1.);
-xy_left_buff = polybuffer(poly_left, 0.1).Vertices;
-xy_rght_buff = polybuffer(poly_rght, 0.1).Vertices;
-lung_left = inpolygon(x,y,xy_left_buff(:,1),xy_left_buff(:,2));
-lung_rght = inpolygon(x,y,xy_rght_buff(:,1),xy_rght_buff(:,2));
+poly_rght = polyshape(xy_rght(:,1),xy_rght(:,2));
+xy_left = poly_left.Vertices;
+xy_rght = poly_rght.Vertices;
+lung_left = inpolygon(x,y,xy_left(:,1),xy_left(:,2));
+lung_rght = inpolygon(x,y,xy_rght(:,1),xy_rght(:,2));
+% xy_left_buff = polybuffer(poly_left, 0.1).Vertices;
+% xy_rght_buff = polybuffer(poly_rght, 0.1).Vertices;
+% lung_left = inpolygon(x,y,xy_left_buff(:,1),xy_left_buff(:,2));
+% lung_rght = inpolygon(x,y,xy_rght_buff(:,1),xy_rght_buff(:,2));
 % Diseased states (conditions)
 if ~isempty(conds)
     if any("LP"==conds), lung_left(y<mean(y)) = 0; end  % LEFT,  POSTERIOR
@@ -62,9 +78,14 @@ if ~isempty(conds)
     if any("RA"==conds), lung_rght(y>mean(y)) = 0; end  % RIGHT, ANTERIOR
 end
 % Define truth
-sig_true = 0*ones(nn,1) + lung_left + lung_rght;
-sig_true(sig_true>1) = 1;
-sig_t_F = scatteredInterpolant(x,y,sig_true);  
+gamma_true = 0*ones(nn,1) + lung_left + lung_rght;
+gamma_true(gamma_true>1) = 1;
+gamma_true = gamma_true*g_t_factor;
+% gamma_true = -2*ones(nn,1) + 4*(lung_left + lung_rght);
+% gamma_true(gamma_true>2) = 2;
+% gamma_true = 1*ones(nn,1) - (lung_left + lung_rght);
+% gamma_true(gamma_true<0) = 0;
+gamma_t_F = scatteredInterpolant(x,y,gamma_true);  
 
 % % Plot
 % figure(999)
@@ -79,7 +100,7 @@ sig_t_F = scatteredInterpolant(x,y,sig_true);
 % Generate FEM model parameters
 params_m = {nodes,tris,nn,bdy_indx,bdy_elems};
 params_e = {n_elec,in_elec,n_per_elec,z_elec,N};
-params_p = {sig_true};
+params_p = {gamma_true};
 fem_params = {params_m,params_e,params_p};
 [K,pK,SpK,i_K,M_B,C,D] = generate_fem_model(fem_params); 
 
@@ -93,7 +114,9 @@ uu = A\F;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Simulated data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Meas_rest = sparse((1:n_elec-1),(nn+1:nn+n_elec-1),1);
-data_t = MeasPattern*N*Meas_rest*uu;           % voltages at electrodes
+data_t = MeasPattern*N*Meas_rest*uu;            % voltages at electrodes
+% figure, hold on
+% for i = 1:16, plot(data_t()),end 
 size_data = size(data_t);                       % # electrode nodes
 
 
@@ -125,8 +148,8 @@ if any(101==do_plots)
 end
 
 % Plot the ground truth
-if any(103==do_plots), plot_sigma('Ground truth',103,[1,2,1],tris,x,y,sig_true,0), end
-if any(104==do_plots), plot_sigma('Ground truth',104,[3,2,1],tris,x,y,sig_true,0), end
-if any(105==do_plots), plot_sigma('Ground truth',105,[3,3,1],tris,x,y,sig_true,0), end
+if any(103==do_plots), plot_tau('Ground truth',103,[1,2,1],tris,x,y,gamma_true,[0,1]), end
+if any(104==do_plots), plot_tau('Ground truth',104,[3,2,1],tris,x,y,gamma_true,0,[0,1]), end
+if any(105==do_plots), plot_tau('Ground truth',105,[3,3,1],tris,x,y,gamma_true,0,[0,1]), end
 
 end

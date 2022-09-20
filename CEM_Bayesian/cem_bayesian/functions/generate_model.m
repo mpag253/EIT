@@ -19,7 +19,7 @@ nn = length(Nodes);                               % # nodes
 bdy_indx = find(full_bdy);                        % indices of boundary nodes
 nn_bdy = sum(full_bdy);                           % # nodes on boundary
 x_bdy = x(full_bdy); y_bdy = y(full_bdy);         % boundary x&y
-theta_bdy = atan2(y_bdy,x_bdy);                   % polar angles of boundary nodes
+theta_bdy = -atan2(y_bdy,x_bdy);                   % polar angles of boundary nodes
 [~,ss_b] = sort(theta_bdy);                       % indices when theta-sorted
 % bdy_elems = [ss_b [ss_b(2:end); ss_b(1)]];        % boundary elements
 bdy_elems = freeBoundary(tgeom);
@@ -67,7 +67,7 @@ bdy_lens = sum((bdy_coords - bdy_coords([end,1:end-1],:)).^2,2).^.5;
 bdy_cper = cumsum(bdy_lens);
 bdy_len = bdy_cper(end);
 % find starting point (sternum...)
-e0_theta = pi/2; % important: between -pi and pi
+e0_theta = -pi/2; % important: between -pi and pi
 e0_cper = interp1(theta_bdy(ss_b),bdy_cper,e0_theta,'spline');
 % equidistant array
 bdy_elec = e0_cper + ((bdy_len/n_elec)*[0:n_elec-1])';

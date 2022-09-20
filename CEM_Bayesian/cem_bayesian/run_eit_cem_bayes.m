@@ -17,10 +17,10 @@ addpath('cem_bayesian/functions', ...
         'cem_bayesian/filexchange', ...
         'cem_bayesian/plot_functions')
 
-set(groot,'defaulttextinterpreter','latex');  
-set(groot,'defaultAxesTickLabelInterpreter','latex');  
-set(groot,'defaultLegendInterpreter','latex');
-rng(123) 
+% set(groot,'defaulttextinterpreter','latex');  
+% set(groot,'defaultAxesTickLabelInterpreter','latex');  
+% set(groot,'defaultLegendInterpreter','latex');
+rng(123)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,8 +51,8 @@ N(1,:)=1;
 MeasPattern=toeplitz([1;-1;zeros(n_elec-2,1)],[1,zeros(1,n_patt-2),-1]);
 
 % DATA
-[nl,conds] = deal(params_d{:});
-sig_0 = 1;                      % (...)
+[nl,conds,g_t_factor] = deal(params_d{:});
+tau_0 = 1;                      % (...)
 
 % PRIORS
 [prior_type,l_prcorr] = deal(params_p{:});
@@ -67,12 +67,12 @@ fprintf('\nForward model:\n\n\t')
 
 % Packing the input parameters
 params_m = {fwd_mesh_file,fwd_seed_files};
-params_e = {n_elec,n_patt,z_elec,w_elec,N,MeasPattern}; % <--- fix
-params_d = {nl,sig_0,conds}; %,mu_sig}; % <--- fix
+params_e = {n_elec,n_patt,z_elec,w_elec,N,MeasPattern};
+params_d = {nl,tau_0,conds,g_t_factor};
 fwd_params = {params_m,params_e,params_d};
 
 % Generating simulated data with forward solution
-[data,sig_t_f,fwd_bdy,Le] = generate_forward_data(fwd_params,make_figs);
+[data,tau_t_f,fwd_bdy,Le] = generate_forward_data(fwd_params,make_figs);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Inverse Model %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,7 +97,7 @@ inv_params = {params_m,params_e};
 % Generate FEM model parameters
 params_m = {nodes,tris,nn,bdy_indx,bdy_elems};
 params_e = {n_elec,in_elec,n_per_elec,z_elec,N};
-params_d = {sig_0};
+params_d = {tau_0};
 fem_params = {params_m,params_e,params_d};
 [~,pK,SpK,i_K,M_B,C,D] = generate_fem_model(fem_params);
 
@@ -122,31 +122,32 @@ params_m = {nn,tris,x,y,theta};
 params_p = {prior_type,n_priors,l_prcorr};
 params_f = {root,pca_id,inv_mesh_file};
 prior_params = {params_m,params_p,params_f};
-[mu_sig,L_sig,G_sig] = generate_priors(prior_params,false);
+[mu_tau,L_tau,G_tau] = generate_priors(prior_params,false);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Reconstruction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Initiate solution
-sig_new = mu_sig; %*ones(nn,1);
+tau_new = mu_tau; %*ones(nn,1);
 iter = 1;
 norm_grad_init = 1;
 Meas_rest = sparse((1:n_elec-1),(nn+1:nn+n_elec-1),1);
 data_v = data(:);
-tol = 1e-7; % 1e-7; % 
+tol = 1e-6; % 1e-6; % 
 converged = false;
 
 % Plot the initial reconstruction
 clims1 = [0,1]; %[min(sig_t) max(sig_t)];
 if any(103==make_figs)
-    plot_sigma('Initial estimate',103,[1,2,2],tris,x,y,sig_new,clims1)
+    plot_tau('Initial estimate',103,[1,2,2],tris,x,y,tau_new,clims1)
 end
 
 % Iterate solution
 fprintf('\nReconstruction:\n\n')
 while (iter<=max_iter) && ~converged
     
-    K = sparse(i_K(:,1),i_K(:,2),pK*exp(sig_new),nn,nn);
+    % K = sparse(i_K(:,1),i_K(:,2),pK*exp(sig_new),nn,nn);
+    K = sparse(i_K(:,1),i_K(:,2),pK*(get_sigma(tau_new,0)),nn,nn); % bounded
     B = K+B_imp;
     A = [B,C;C',D];
     uu_new = A\F;
@@ -158,20 +159,24 @@ while (iter<=max_iter) && ~converged
             -d_L*[reshape(SpK*uu_new(1:nn,jj),nn,nn);zeros(n_elec-1,nn)];
     end
 
-    J_total = [Le*S*diag(exp(sig_new));L_sig];
+    % J_total = [Le*S*diag(exp(sig_new));L_sig];
+    J_total=[Le*S*diag(get_sigma(tau_new,1));L_tau]; % bounded
     b_total = [Le*(reshape(MeasPattern*N*Meas_rest*uu_new,n_patt*n_elec,1)-data_v);...
-               L_sig*(sig_new-mu_sig)];
+               L_tau*(tau_new-mu_tau)];
     dir_k = -J_total\b_total;
 
     % Cost Function
+    % P = @(kappa) norm(Le*(reshape(MeasPattern*N*Meas_rest*([sparse(i_K(:,1),i_K(:,2),pK*...
+    %    exp(sig_new+kappa*dir_k))+B_imp,C;C',D]\F),n_patt*n_elec,1)-data_v))^2+...
+    %    norm(L_sig*(sig_new+kappa*dir_k-mu_sig))^2;
     P = @(kappa) norm(Le*(reshape(MeasPattern*N*Meas_rest*([sparse(i_K(:,1),i_K(:,2),pK*...
-        exp(sig_new+kappa*dir_k))+B_imp,C;C',D]\F),n_patt*n_elec,1)-data_v))^2+...
-        norm(L_sig*(sig_new+kappa*dir_k-mu_sig))^2;
+       (get_sigma(tau_new+kappa*dir_k,0)))+B_imp,C;C',D]\F),n_patt*n_elec,1)-data_v))^2+...
+       norm(L_tau*(tau_new+kappa*dir_k-mu_tau))^2; % bounded
 
     % Line Search
     % len=1;    % to not do line search
     len = fminsearch(P,1);
-    sig_new = sig_new+len*dir_k;
+    tau_new = tau_new+len*dir_k;
     norm_grad = norm(J_total'*b_total);
 
     % Update iterations
@@ -184,8 +189,8 @@ while (iter<=max_iter) && ~converged
     % Plot latest reconstruction
     if any(103==make_figs)
         if converged, pt = 'Reconstruction'; else, pt = 'Latest iteration'; end
-        plot_sigma(pt,103,[1,2,2],tris,x,y,sig_new,clims1)
-        pause(.5)
+        plot_tau(pt,103,[1,2,2],tris,x,y,tau_new,clims1)
+        %pause(.5)
     end
 end
 
@@ -197,84 +202,111 @@ set(gcf,'Position',[0 scrnwh(4)-fig_h fig_w fig_h])
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% POSTERIOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 fprintf('\nPosterior:\n')
 
+% Ground truth evaluated on inverse solution mesh
+% tau_t = tau_t_f(x,y);  % absolute
+tau_t = get_relative_ground_truth(tau_t_f,x,y,x_bdy,y_bdy,fwd_bdy);  %relative
+
 %  Posterior calculations
 G_post = inv(J_total'*J_total);               % posterior covariance
 S_post = diag(G_post).^(.5);                  % standard deviations
 L_post = chol(G_post,'lower');                % (...)
 
 % Samples from the posterior distrubution
-n_post_samps = 1e4;
-sig_samps = sig_new+L_post*randn(nn,n_post_samps);
+n_post_samps = 50;
+tau_samps = tau_new+L_post*randn(nn,n_post_samps);
 
-% Ground truth evaluated on inverse solution mesh
-% sig_t = sig_t_f(x,y);  % absolute
-sig_t = get_relative_ground_truth(sig_t_f,x,y,x_bdy,y_bdy,fwd_bdy);  %relative
-
-% Relative error of solution
-% rel_err = norm(sig_new-sig_t)/norm(sig_t);
-rel_err = norm(get_truncated_sigma(sig_new)-sig_t)/norm(sig_t);
-
-%  Mahalanobis distance of solution
-m_dist = get_mahalanobis_distance(x,y,tris,sig_new,sig_t,G_post);
-
-%  Total variation
-[tv_mean,tv_stdv] = get_total_variation(nodes,tris,x,y,sig_new,sig_samps);
-% alternative
-tv_alt = trace(G_post);
-% overall_correlation = det(G_post);
+% Relative error, mahalanobis distance, total variation
+% r_e = get_relative_error(nodes,tris,tau_new,tau_t);
+r_e = get_relative_error(nodes,tris,get_truncated_tau(tau_new),tau_t);
+m_d = get_mahalanobis_distance(nodes,tris,tau_new,tau_t,G_post);
+t_v = get_total_variation(nodes,tris,G_post);
 
 % Display
-fprintf("\n\tPrior corr. len.:   %.2e",l_prcorr)
-fprintf("\n\tRelative error:     %.2e",rel_err)
-fprintf("\n\tMahalanobis dist.:  %.2e",m_dist)
-fprintf("\n\tTotal variation:    %.2e \x00B1 %.2e\n",tv_mean,tv_stdv)
-fprintf("\n\t(Total variation ALT):    %.2e\n",tv_alt)
-fprintf("\n\t(overall correlation):    %.2e\n",det(G_post))
+fprintf("\n\tRelative error:     %.2e",r_e)
+fprintf("\n\tMahalanobis dist.:  %.2e",m_d)
+fprintf("\n\tTotal variation:    %.2e\n",t_v)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIGURES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Summary plots
 if any(104==make_figs)
-    plot_sigma('Prior Mean',104,[3,2,3],tris,x,y,mu_sig,clims1)
-    plot_sigma('Prior SD',104,[3,2,5],tris,x,y,diag(G_sig).^.5,clims1)
-    plot_sigma('MAP Estimate',104,[3,2,4],tris,x,y,sig_new,clims1)
-    plot_sigma('Posterior SD',104,[3,2,6],tris,x,y,S_post,clims1)
-    plot_metrics(104,[3,2,2],l_prcorr,m_dist,tv_mean,tv_stdv)
+    plot_tau('Prior Mean',104,[3,2,3],tris,x,y,mu_tau,clims1)
+    plot_tau('Prior SD',104,[3,2,5],tris,x,y,diag(G_tau).^.5,clims1)
+    plot_tau('MAP Estimate',104,[3,2,4],tris,x,y,tau_new,clims1)
+    plot_tau('Posterior SD',104,[3,2,6],tris,x,y,S_post,clims1)
+    plot_metrics(104,[3,2,2],l_prcorr,m_d,tv_mean,tv_stdv)
 end
 
 % Solution slice
 if any(105==make_figs)
-    plot_sigma('MAP Estimate',105,[3,3,2],tris,x,y,sig_new,clims1)
+    plot_tau('MAP Estimate',105,[3,3,2],tris,x,y,tau_new,clims1)
     scrnwh = get(0,'screensize'); fig_w = 1000; fig_h = 750;
-    set(gcf,'Position',[0 scrnwh(4)-fig_h fig_w fig_h])
-    plot_metrics(105,[3,3,3],rel_err,m_dist,tv_mean,tv_stdv)
-    plot_add_section('A',105,[3,3,2],x,-30)
-    plot_add_section('B',105,[3,3,2],x, 30)
-    ax_A = plot_section('Section A',105,[9,2,7:2:15], x,y,-30,sig_t,sig_new,S_post,sig_samps(:,1:3));
-    ax_B = plot_section('Section B',105,[9,2,8:2:16], x,y, 30,sig_t,sig_new,S_post,sig_samps(:,1:3));
+    %set(gcf,'Position',[0 scrnwh(4)-fig_h fig_w fig_h])
+    set(gcf,'Position',[100 100 fig_w fig_h])
+    plot_metrics(105,[3,3,3],r_e,m_d,t_v)
+    plot_add_section('A',105,[3,3,2],x,-40)
+    plot_add_section('B',105,[3,3,2],x, 40)
+    ax_A = plot_section('Section A',105,[9,2,7:2:15], x,y,-40,tau_t,tau_new,S_post,tau_samps(:,1:3));
+    ax_B = plot_section('Section B',105,[9,2,8:2:16], x,y, 40,tau_t,tau_new,S_post,tau_samps(:,1:3));
     linkaxes([ax_A ax_B], 'y')
-    % font size
     kids=get(gcf,'children');
     for i = 1:length(kids), set(kids(i),'fontsize', 14); end
     % legend
     kids=get(ax_A, 'Children');
     lgd = legend([kids(2) kids(1) kids(6) kids(5)], ...
-                 {'True {} ','MAP {} ','${99\%}$ CI {} ','Samples'}, ...
+                 {'True {} ','MAP {} ','99% CI {} ','Samples'}, ...
                  'Orientation','horizontal');
     lgd_pos = lgd.Position;
     lgd_pos(1) = (1-lgd_pos(3))/2;
     lgd_pos(2) = 0.075;
 %     lgd.Position(lgd_pos);
     set(lgd,'Position',lgd_pos)
-
 end
 
 % Posterior samples
 if any(106==make_figs)
-'eit_animated.gif'    fname = 'eit_animated.gif'
-    plot_post_samps('Posterior Samples',106,0,tris,x,y,sig_samps(:,1:50),clims1,fname)
+    if any(106==save_figs)
+        save_dir = ['output/figures/',batch,'/',batch,'-',num2str(num,'%03d'),'/'];
+        if ~exist(save_dir, 'dir'), mkdir(save_dir); end
+        plot_post_samps('Posterior Samples',106,0,tris,x,y,tau_samps,clims1,save_dir)
+    else
+        plot_post_samps('Posterior Samples',106,0,tris,x,y,tau_samps,clims1,0)
+    end
 end
+
+% For manuscript figures
+if any(107==make_figs)
+    ax_A = plot_section('',107,[9,1,1:4], x,y, 40,tau_t,tau_new,S_post,tau_samps(:,1:3));
+    ylim([-0.4,2.2])
+    set(gca, 'XTickLabel', [])
+    xlabel("")
+    % set(gca, 'position', get(gca, 'position')+[0 0.05 0 0])
+    ax_B = plot_section('',107,[9,1,5:8], x,y,0,tau_t,tau_new,S_post,tau_samps(:,1:3));
+    ylim([-0.4,2.2])
+    kids=get(gcf,'children');
+    for i = 1:length(kids), set(kids(i),'fontsize', 14); end
+    % legend
+    kids=get(ax_B, 'Children');
+    lgd = legend([kids(2) kids(1) kids(6) kids(5)], ...
+                 {'True {} ','MAP {} ','99% CI {} ','Samples'}, ...
+                 'Orientation','horizontal');
+    lgd_pos = lgd.Position;
+    lgd_pos(1) = (1-lgd_pos(3))/2;
+    lgd_pos(2) = 0.025;
+    set(lgd,'Position',lgd_pos)
+    set(gcf,'Position',[50 50 600 600])
+end
+
+% % For temporal
+% if any(108==make_figs)
+%     save_dir = ['output/figures/temporal/',batch,'/'];
+%     if ~exist(save_dir, 'dir'), mkdir(save_dir); end
+%     fname_1 = [save_dir,'frame_',num2str(num,'%03d'),'_fwd.dat'];
+%     fname_2 = [save_dir,'frame_',num2str(num,'%03d'),'_inv.dat'];
+%     writematrix(tau_t,fname_1)
+%     writematrix(tau_new,fname_2)
+% end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OUTPUT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -284,8 +316,8 @@ if isempty(save_figs) && ~save_data, fprintf('\tNone.\n'); end
 % Data
 if save_data
     fname = ['output/metrics/metrics_',batch,'.xlsx'];
-    fhead = {'Batch','Num','Converged','PCL','MD','TV','TV (sd)'};
-    fdata = {batch,num,converged,l_prcorr,m_dist,tv_mean,tv_stdv};
+    fhead = {'Batch','Num','Converged','RE','MD','TV'};
+    fdata = {batch,num,converged,r_e,m_d,t_v};
     if ~isfile(fname),  writecell(fhead,fname); end
     writecell(fdata,fname,'WriteMode','append');
     fprintf(['\tSaved "',fname,'"\n'])
@@ -296,7 +328,10 @@ for fg = save_figs
     save_dir = ['output/figures/',batch,'/',batch,'-',num2str(num,'%03d'),'/'];
     if ~exist(save_dir, 'dir'), mkdir(save_dir); end
     fname = [save_dir,'figure_',num2str(fg),'.png'];
-    figure(fg), exportgraphics(gcf,fname,'Resolution',150)
+    % figure(fg), exportgraphics(gcf,fname,'Resolution',150)
+    figure(fg), saveas(gcf,fname)
+    % fname = [save_dir,'figure_',num2str(fg)];
+    % print(figure(fg),'-dpng','-r300',fname);
     fprintf(['\tSaved "',fname,'"\n'])
 end
 
@@ -304,34 +339,3 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 fprintf('\n')
 end
-
-% function [m_dist] = get_mahalanobis_distance(x,y,tris,sig_new,sig_t,G_post)
-%     % weight mahalanobis distance using element areas
-%     md_wts = zeros(length(x),1);
-%     elem_areas = zeros(size(tris,1),1);
-%     for e = 1:size(tris,1)
-%         elem_areas(e) = polyarea(x(tris(e,:)),y(tris(e,:)));
-%     end
-%     elem_areas = elem_areas/sum(elem_areas);
-%     for n = 1:length(x)
-%         nod_elems = [find(tris(:,1)==n);find(tris(:,2)==n);find(tris(:,3)==n)];
-%         md_wts(n) = sum(elem_areas(nod_elems))/3;
-%     end
-%     % figure(999), trisurf(tris,x,y,md_wts)
-%     % size(md_wts)
-%     % size((sig_t-sig_new)')
-%     wtd_diff = md_wts.*(sig_t-sig_new);
-%     % size(wtd_diff)
-%     m_dist = (wtd_diff'/G_post*wtd_diff)^0.5;
-%     % m_dist = ((sig_t-sig_new)/(G_post)*(sig_t-sig_new))).^0.5;
-%     % p-value: d^2 follows the chi-squared distribution with n degrees of freedom, 
-%     % where n is the number of dimensions of the normal distribution. n = ?
-% end
-
-% function [sig_trunc] = get_truncated_sigma(sig)
-%     sig_trunc = sig;
-%     sig_trunc(sig_trunc>1) = 1;
-%     sig_trunc(sig_trunc<0) = 0;
-% end
-
-
