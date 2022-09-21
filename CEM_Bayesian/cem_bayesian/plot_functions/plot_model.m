@@ -17,16 +17,22 @@ function [] = plot_model(pt,fg,sp,tgeom,vars_bdy,vars_elec)
 
     % Plot electrode nodes
     in_any_elec = logical(sum(in_elec,2));
-    plot(x_bdy(in_any_elec),y_bdy(in_any_elec),'og','MarkerSize',4,'LineWidth',2)
+    plot(x_bdy(in_any_elec),y_bdy(in_any_elec),'ob','MarkerSize',4,'LineWidth',2)
 
     % Plot electrode points
-    plot(elec_pts(:,1),elec_pts(:,2),'xb','MarkerSize',12,'LineWidth',3)
+    plot(elec_pts(:,1),elec_pts(:,2),'xr','MarkerSize',12,'LineWidth',3)
 
     % Plot electrode labels
-    spacing_factor = 1.1;
+    spacing = 20;
     for i = 1:length(elec_pts)
-        text(1.2*elec_pts(i,1),spacing_factor*elec_pts(i,2),num2str(i),...
-             'Color','b','FontSize',10)
+        ang = atan2(elec_pts(i,2),elec_pts(i,1));
+        dx = spacing*cos(ang);
+        dy = spacing*sin(ang);
+        text(elec_pts(i,1)+dx,elec_pts(i,2)+dy,num2str(i),...
+             'Color','b', ...
+             'FontSize',14, ...
+             'VerticalAlignment', 'middle', ...
+             'HorizontalAlignment', 'center') 
     end
 
     % Format

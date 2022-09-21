@@ -1,9 +1,36 @@
-function [] = plot_section(pt,fg,sp,x_s,section_data)
+function [ax] = plot_section(pt,fg,sp,x,y,y_s,sig_t,sig_new,S_post,sig_samps)
 
-    % Unpack section data
-    [z_t,z_s,z_s_samps,z_s_ci] = deal(section_data{:});
+    % Define section
+    x_s = linspace(min(x),max(x),1e3);    % section x-coordinates 
+    y_s = y_s*ones(size(x_s));            % section 1 y-coordinates
+
+    % Truth
+    F = scatteredInterpolant(x,y,sig_t);
+    z_t = F(x_s,y_s);
     
-    % Setup
+    % MAP estimate
+    F = scatteredInterpolant(x,y,sig_new);         
+    z_s = F(x_s,y_s);
+    
+    % Posterior standard devaition
+    F = scatteredInterpolant(x,y,S_post);          
+    z_s_sd = F(x_s,y_s);
+    
+    % Posterior samples
+    n_samps = size(sig_samps,2);
+    z_s_samps = cell(n_samps);
+    for i = 1:n_samps
+        F = scatteredInterpolant(x,y,sig_samps(:,i));
+        z_s_samps{i} = F(x_s,y_s);
+    end
+    
+    % Confidence interval
+    z_s_ci = {z_s+2.576*z_s_sd, z_s-2.576*z_s_sd};
+    
+
+    %%
+
+    % Figure setup
     figure(fg)
     if sp, subplot(sp(1),sp(2),sp(3:end)), end
     hold on
@@ -17,7 +44,7 @@ function [] = plot_section(pt,fg,sp,x_s,section_data)
     
     % Posterior samples
     for i = 1:length(z_s_samps)
-      plot(x_s,z_s_samps{i},':','LineWidth',2,'Color',.5*[1 1 1]);
+        plot(x_s,z_s_samps{i},':','LineWidth',2,'Color',.5*[1 1 1]);
     end
 
     % Truth & MAP estimate
@@ -26,15 +53,22 @@ function [] = plot_section(pt,fg,sp,x_s,section_data)
 
     % Format plot
     xlim([min(x_s) max(x_s)])
-    xlabel('x')
-    ylabel('${\sigma}$')
-    title(pt,'interpreter','latex')
-    plots=get(gca, 'Children');
-    legend([plots(2) plots(1) plots(6) plots(5)], ...
-           {'True','MAP','${99\%}$ CI','Samples'}, ...
-           'Location','SouthOutside', ...
-           'Orientation','horizontal')
+    xlabel('x (mm)')
+%     ylabel('${\sigma}$')
+    ylabel('\gamma')
+    ytickformat('%.1f')
+%     pt = ['\bf ', pt, ' \rm'];
+%     title(pt,'interpreter','latex')
+    title(pt,'FontWeight','bold')
+%     plots=get(gca, 'Children');
+%     legend([plots(2) plots(1) plots(6) plots(5)], ...
+%            {'True','MAP','${99\%}$ CI','Samples'}, ...
+%            'Location','SouthOutside', ...
+%            'Orientation','horizontal')
     set(gca, 'YGrid', 'on', 'XGrid', 'off')
     set(gca, 'layer', 'top')
+    set(gca, 'fontsize', 14)
     hold off
+
+    ax = gca;
 end
